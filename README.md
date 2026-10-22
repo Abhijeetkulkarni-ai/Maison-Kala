@@ -51,3 +51,4 @@ src/
 
 The storefront currently keeps cart, wishlist, demo accounts and order history in browser localStorage. It does not process real payments, authenticate securely, or connect to a courier. Never use real passwords in the demo. For production, connect a secure authentication provider, database, payment gateway and shipping/tracking API.
 # Maison-Kala
+# Maison-Kala
