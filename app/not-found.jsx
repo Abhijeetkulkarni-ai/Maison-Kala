@@ -1,6 +1,5 @@
-
 import Link from "next/link";
-
+import BackButton from "../src/components/BackButton";
 export default function NotFound() {
   return (
     <main className="mk-error">
@@ -14,8 +13,8 @@ export default function NotFound() {
         <h1>A little detour.</h1>
 
         <p className="mk-error__description">
-          The page you are looking for seems to have wandered
-          somewhere else. Let&apos;s find something beautiful instead.
+          The page you are looking for seems to have wandered somewhere else.
+          Let&apos;s find something beautiful instead.
         </p>
 
         <div className="mk-error__actions">
@@ -23,13 +22,7 @@ export default function NotFound() {
             Return to shop <span aria-hidden="true">↗</span>
           </Link>
 
-          <button
-            type="button"
-            className="mk-error__back"
-            onClick={() => window.history.back()}
-          >
-            Go back
-          </button>
+          <BackButton />
         </div>
 
         <div className="mk-error__editorial">
