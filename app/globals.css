@@ -3720,3 +3720,370 @@ select:focus-visible {
     transition: none;
   }
 }
+
+
+
+/* =========================================
+   MAISON KALA — ERROR PAGES
+========================================= */
+
+.mk-error,
+.mk-loading {
+  --mk-ivory: #f8f5f0;
+  --mk-ink: #26231f;
+  --mk-muted: #81796f;
+  --mk-line: #ded8cf;
+  --mk-accent: #7c3aed;
+
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.mk-error *,
+.mk-loading * {
+  box-sizing: border-box;
+}
+
+.mk-error {
+  min-height: 80vh;
+  min-height: 80svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  background: var(--mk-ivory);
+  color: var(--mk-ink);
+  overflow: hidden;
+}
+
+.mk-error__content {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  animation: mk-error-enter 0.7s ease both;
+}
+
+.mk-error__eyebrow {
+  display: block;
+  margin-bottom: 28px;
+  color: var(--mk-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.8;
+}
+
+.mk-error__code {
+  margin: 0 0 8px;
+  color: #c9c0b4;
+  font-size: clamp(64px, 12vw, 104px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.mk-error h1 {
+  margin: 16px 0;
+  color: var(--mk-ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.mk-error__description {
+  max-width: 430px;
+  margin: 20px auto 0;
+  color: var(--mk-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+.mk-error__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.mk-error__button {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 24px;
+  border: 1px solid var(--mk-ink);
+  border-radius: 0;
+  background: var(--mk-ink);
+  color: #fff;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.mk-error__button:hover {
+  background: transparent;
+  color: var(--mk-ink);
+}
+
+.mk-error__button:focus-visible,
+.mk-error__back:focus-visible {
+  outline: 2px solid var(--mk-accent);
+  outline-offset: 4px;
+}
+
+.mk-error__back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: var(--mk-ink);
+  font: inherit;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mk-error__back:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.mk-error__editorial {
+  width: min(100%, 420px);
+  margin: 54px auto 0;
+}
+
+.mk-error__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 70% 40%,
+      rgba(255, 255, 255, 0.65),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #e8dfd2 0%,
+      #d7c7b4 48%,
+      #c5b5a3 100%
+    );
+}
+
+.mk-error__image::before {
+  content: "";
+  position: absolute;
+  width: 43%;
+  height: 115%;
+  top: 4%;
+  left: 30%;
+  border-radius: 48% 48% 10% 10%;
+  background: linear-gradient(
+    110deg,
+    #b9a58d,
+    #eee2d1 42%,
+    #c5b39c 78%,
+    #a8947d
+  );
+  transform: rotate(-14deg);
+  box-shadow: 24px 18px 40px rgba(64, 48, 32, 0.13);
+}
+
+.mk-error__image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(38, 35, 31, 0.2),
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+.mk-error__image-label {
+  position: absolute;
+  z-index: 1;
+  right: 16px;
+  bottom: 14px;
+  left: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #fff;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.mk-error__footnote {
+  margin: 28px 0 0;
+  color: #a39a8e;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.17em;
+  line-height: 1.8;
+}
+
+.mk-error--compact {
+  min-height: 65vh;
+  min-height: 65svh;
+}
+
+.mk-error--compact .mk-error__content {
+  max-width: 600px;
+}
+
+.mk-error__symbol {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+  border: 1px solid var(--mk-line);
+  border-radius: 50%;
+  color: var(--mk-muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 24px;
+}
+
+.mk-error--global {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Loading screen */
+
+.mk-loading {
+  min-height: 65vh;
+  min-height: 65svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: #f8f5f0;
+  color: #26231f;
+}
+
+.mk-loading__brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  letter-spacing: 0.19em;
+}
+
+.mk-loading__line {
+  width: 110px;
+  height: 1px;
+  margin-top: 30px;
+  overflow: hidden;
+  background: #ded8cf;
+}
+
+.mk-loading__line span {
+  display: block;
+  width: 45%;
+  height: 100%;
+  background: #26231f;
+  animation: mk-loading-progress 1.4s ease-in-out infinite;
+}
+
+.mk-loading p {
+  margin-top: 18px;
+  color: #81796f;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+@keyframes mk-error-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mk-loading-progress {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(340%);
+  }
+}
+
+@media (max-width: 600px) {
+  .mk-error {
+    min-height: 75vh;
+    min-height: 75svh;
+    padding: 48px 20px;
+  }
+
+  .mk-error__eyebrow {
+    margin-bottom: 22px;
+    font-size: 9px;
+  }
+
+  .mk-error__description {
+    max-width: 340px;
+    font-size: 13px;
+  }
+
+  .mk-error__actions {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 26px;
+  }
+
+  .mk-error__button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .mk-error__editorial {
+    margin-top: 38px;
+  }
+
+  .mk-error__footnote {
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mk-error__content {
+    animation: none;
+  }
+
+  .mk-loading__line span {
+    animation: none;
+  }
+
+  .mk-error__button {
+    transition: none;
+  }
+}
