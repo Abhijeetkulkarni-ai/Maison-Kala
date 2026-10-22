@@ -1,3 +1,5 @@
+  git add README.md
+git commit -m "Merge remote main with local project"<<<<<<< HEAD
 # Maison Kala — Next.js storefront
 
 Component-based Next.js App Router conversion of the Maison Kala React storefront. The existing luxury design, product data, cart, wishlist, search, product detail, demo checkout and demo account UI are retained.
@@ -51,4 +53,6 @@ src/
 
 The storefront currently keeps cart, wishlist, demo accounts and order history in browser localStorage. It does not process real payments, authenticate securely, or connect to a courier. Never use real passwords in the demo. For production, connect a secure authentication provider, database, payment gateway and shipping/tracking API.
 # Maison-Kala
+=======
+>>>>>>> 7c47a4d089a4b4f1c4ec1482feccab1a7c1c51ef
 # Maison-Kala
